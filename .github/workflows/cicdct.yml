@@ -35,4 +35,14 @@ jobs:
       with:
         name: Package
         path: staging
+    - name: Login to Docker
+      run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
+    - name: Build Employee docker image
+      run: docker build -t employeejava .
+    - name: Tag employee image to version
+      run: docker tag employeejava saikumarkotha/employeeapi:v2.0
+    - name: Run Docuker images
+      run: docker images
+    - name: Docker Push to hub
+      run: docker push saikumarkotha/employeeapi:v2.0
 
