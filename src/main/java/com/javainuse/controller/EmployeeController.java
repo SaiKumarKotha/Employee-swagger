@@ -27,7 +27,7 @@ public class EmployeeController {
 	public Employee delete(@PathVariable("id") int id) {
 		Employee deletedEmp = null;
 		for (Employee emp : employees) {
-			if (emp.getEmpId().equals(id)) {
+			if (Integer.parseInt(emp.getEmpId()) == id) {
 				employees.remove(emp);
 				deletedEmp = emp;
 				break;
