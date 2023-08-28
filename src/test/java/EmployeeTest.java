@@ -18,6 +18,7 @@ public class EmployeeTest {
         Employee employee = new Employee();
         employee.setDesignation("Manager");
         Assert.assertEquals("Manager", employee.getDesignation());
+        
     }
 
     @Test
